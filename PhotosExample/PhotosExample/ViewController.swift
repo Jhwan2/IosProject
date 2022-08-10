@@ -10,18 +10,18 @@ import Photos
 
 class ViewController: UIViewController, UITableViewDataSource {
     
-    @IBOutlet weak var tableView: UITableView!
-    var fetchResult: PHFetchResult<PHAsset>!
-    let imageManager: PHCachingImageManager = PHCachingImageManager()
-    let cellIdentifier: String = "cell"
+    @IBOutlet weak var tableView: UITableView! // 그냥 tableView 표시용
+    var fetchResult: PHFetchResult<PHAsset>! //사진 가져오기 메서드 [가져오기 메서드에서 반환된 에셋 또는 컬렉션의 정렬된 목록입니다.]
+    let imageManager: PHCachingImageManager = PHCachingImageManager() //많은 에셋을 일괄적으로 미리 로딩하기 위해 최적화된 에셋과 관련된 섬네일 및 전체 크기의 이미지 또는 비디오 데이터를 검색하거나 생성하는 방법을 제공합니다.
+    let cellIdentifier: String = "cell" //식별용
     
     func requestCollection(){
         
-        let cameraRoll: PHFetchResult<PHAssetCollection> = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
+        let cameraRoll: PHFetchResult<PHAssetCollection> = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil) // 앨범 검색 ?
         
         guard let cameraRollColletion = cameraRoll.firstObject else { return }
         
-        let fetchOptions = PHFetchOptions()
+        let fetchOptions = PHFetchOptions() //에셋 또는 컬렉션 객체를 가져올 때 Photos에서 반환하는 결과에 필터링, 정렬 등 영향을 주는 옵션입니다.
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         self.fetchResult = PHAsset.fetchKeyAssets(in: cameraRollColletion, options: fetchOptions)
         
