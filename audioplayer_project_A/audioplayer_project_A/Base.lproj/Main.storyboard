@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="audioplayer_project_A" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gdn-oB-Rr3">
+                                <rect key="frame" x="18" y="558" width="378" height="31"/>
+                                <connections>
+                                    <action selector="ChangedValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="1Uk-i0-ark"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8T8-vz-Bbf">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="0Yv-Nj-3gr"/>
+                                    <constraint firstAttribute="width" constant="200" id="81n-Fj-dBi"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="button_play"/>
+                                <state key="selected" image="button_pause"/>
+                                <connections>
+                                    <action selector="Play_Song:" destination="BYZ-38-t0r" eventType="touchUpInside" id="crc-Xz-yXF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1T-9p-sE5">
+                                <rect key="frame" x="186.5" y="598" width="41.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8T8-vz-Bbf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3dv-8j-vQv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gdn-oB-Rr3" secondAttribute="trailing" constant="20" id="CLN-ZW-Dvg"/>
+                            <constraint firstItem="8T8-vz-Bbf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Izc-FU-Gir"/>
+                            <constraint firstItem="B1T-9p-sE5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KSs-h5-0g8"/>
+                            <constraint firstItem="Gdn-oB-Rr3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NVE-Mw-E7L"/>
+                            <constraint firstItem="B1T-9p-sE5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TuI-hO-t35"/>
+                            <constraint firstItem="Gdn-oB-Rr3" firstAttribute="top" secondItem="8T8-vz-Bbf" secondAttribute="bottom" constant="10" id="Y3F-CR-4mp"/>
+                            <constraint firstItem="B1T-9p-sE5" firstAttribute="top" secondItem="Gdn-oB-Rr3" secondAttribute="bottom" constant="10" id="yps-1i-Xji"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playerButton" destination="8T8-vz-Bbf" id="0YL-16-WrQ"/>
+                        <outlet property="slider" destination="Gdn-oB-Rr3" id="yob-4n-c3d"/>
+                        <outlet property="timelable" destination="B1T-9p-sE5" id="Dxg-SH-mzi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="80.357142857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="button_pause" width="185" height="185"/>
+        <image name="button_play" width="187" height="189"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
