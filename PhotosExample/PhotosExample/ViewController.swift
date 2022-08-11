@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, PHPhotoLibraryChangeObserver {
     
     @IBOutlet weak var tableView: UITableView! // 그냥 tableView 표시용
     var fetchResult: PHFetchResult<PHAsset>! //사진 가져오기 메서드 [가져오기 메서드에서 반환된 에셋 또는 컬렉션의 정렬된 목록입니다.]
@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         let fetchOptions = PHFetchOptions() //에셋 또는 컬렉션 객체를 가져올 때 Photos에서 반환하는 결과에 필터링, 정렬 등 영향을 주는 옵션입니다.
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        self.fetchResult = PHAsset.fetchKeyAssets(in: cameraRollColletion, options: fetchOptions)
+        self.fetchResult = PHAsset.fetchAssets(in: cameraRollColletion, options: fetchOptions)
         
     }
 
@@ -62,6 +62,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         @unknown default:
             print("de end ??")
         }
+        
+        PHPhotoLibrary.shared().register(self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,6 +77,30 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         imageManager.requestImage(for: asset, targetSize: CGSize(width: 30, height: 30), contentMode: .aspectFill, options: nil, resultHandler: {image, _ in cell.imageView?.image = image })
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete{
+            let asset: PHAsset = self.fetchResult[indexPath.row]
+            
+            PHPhotoLibrary.shared().performChanges({PHAssetChangeRequest.deleteAssets([asset] as NSArray)}, completionHandler: nil)
+        }
+    }
+    
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        guard let changes = changeInstance.changeDetails(for: fetchResult) else {return}
+        
+        fetchResult = changes.fetchResultAfterChanges
+        
+        OperationQueue.main.addOperation {
+            self.tableView.reloadSections(IndexSet(0...0), with: .automatic)
+        }
     }
 
 
