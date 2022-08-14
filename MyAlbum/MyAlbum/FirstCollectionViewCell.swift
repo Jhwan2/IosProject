@@ -10,5 +10,7 @@ import UIKit
 class FirstCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var numOfCountLabel: UILabel!
     
 }

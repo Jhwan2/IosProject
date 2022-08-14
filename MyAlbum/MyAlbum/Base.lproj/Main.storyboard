@@ -21,33 +21,55 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8pn-5D-4Lz">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="177" height="189"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FirstCell" id="mhi-Dj-ufX" customClass="FirstCollectionViewCell" customModule="MyAlbum" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="189"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qdi-nn-6kS">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="177" height="189"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f38-Od-PvW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="149"/>
                                                 </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fYI-oj-eGd">
+                                                    <rect key="frame" x="0.0" y="149" width="41.5" height="40"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fp-KG-LPZ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zzb-Ig-98e">
+                                                            <rect key="frame" x="0.0" y="20.5" width="41.5" height="19.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="f38-Od-PvW" secondAttribute="bottom" id="X5L-bT-UvV"/>
-                                                <constraint firstItem="f38-Od-PvW" firstAttribute="leading" secondItem="qdi-nn-6kS" secondAttribute="leading" id="b1x-jk-17v"/>
-                                                <constraint firstItem="f38-Od-PvW" firstAttribute="top" secondItem="qdi-nn-6kS" secondAttribute="top" id="drK-Wk-sz9"/>
-                                                <constraint firstAttribute="trailing" secondItem="f38-Od-PvW" secondAttribute="trailing" id="ia8-x8-uTU"/>
+                                                <constraint firstAttribute="bottom" secondItem="f38-Od-PvW" secondAttribute="bottom" constant="40" id="Gju-SH-o5V"/>
+                                                <constraint firstAttribute="trailing" secondItem="f38-Od-PvW" secondAttribute="trailing" id="M5l-hx-A4c"/>
+                                                <constraint firstItem="f38-Od-PvW" firstAttribute="top" secondItem="qdi-nn-6kS" secondAttribute="top" id="OiT-sX-8SM"/>
+                                                <constraint firstItem="f38-Od-PvW" firstAttribute="leading" secondItem="qdi-nn-6kS" secondAttribute="leading" id="XM0-RB-Dt0"/>
+                                                <constraint firstItem="fYI-oj-eGd" firstAttribute="leading" secondItem="qdi-nn-6kS" secondAttribute="leading" id="eDT-TR-bVf"/>
+                                                <constraint firstItem="fYI-oj-eGd" firstAttribute="top" secondItem="f38-Od-PvW" secondAttribute="bottom" id="mPM-uJ-pDv"/>
+                                                <constraint firstAttribute="bottom" secondItem="fYI-oj-eGd" secondAttribute="bottom" id="vZA-W3-Qjd"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                        <size key="customSize" width="177" height="189"/>
                                         <connections>
                                             <outlet property="imageView" destination="f38-Od-PvW" id="PeQ-ub-314"/>
+                                            <outlet property="nameLabel" destination="6Fp-KG-LPZ" id="HUw-oV-19b"/>
+                                            <outlet property="numOfCountLabel" destination="Zzb-Ig-98e" id="myX-ED-pxH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -95,8 +117,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
