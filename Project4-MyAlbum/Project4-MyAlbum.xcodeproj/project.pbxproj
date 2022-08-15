@@ -7,70 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D84931A828A757AE002BF04D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84931A728A757AE002BF04D /* AppDelegate.swift */; };
-		D84931AA28A757AE002BF04D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84931A928A757AE002BF04D /* SceneDelegate.swift */; };
-		D84931AC28A757AE002BF04D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84931AB28A757AE002BF04D /* ViewController.swift */; };
-		D84931AF28A757AE002BF04D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D84931AD28A757AE002BF04D /* Main.storyboard */; };
-		D84931B128A757B0002BF04D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84931B028A757B0002BF04D /* Assets.xcassets */; };
-		D84931B428A757B0002BF04D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D84931B228A757B0002BF04D /* LaunchScreen.storyboard */; };
-		D84931BF28A757B0002BF04D /* MyAlbumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84931BE28A757B0002BF04D /* MyAlbumTests.swift */; };
-		D84931C928A757B0002BF04D /* MyAlbumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84931C828A757B0002BF04D /* MyAlbumUITests.swift */; };
-		D84931CB28A757B0002BF04D /* MyAlbumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84931CA28A757B0002BF04D /* MyAlbumUITestsLaunchTests.swift */; };
-		D84931D828A75E4E002BF04D /* FirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84931D728A75E4E002BF04D /* FirstCollectionViewCell.swift */; };
-		D8FDA13228AA0E2600BC9509 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FDA13128AA0E2600BC9509 /* SecondViewController.swift */; };
+		D8FDA14028AA18BB00BC9509 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FDA13F28AA18BB00BC9509 /* AppDelegate.swift */; };
+		D8FDA14228AA18BB00BC9509 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FDA14128AA18BB00BC9509 /* SceneDelegate.swift */; };
+		D8FDA14428AA18BB00BC9509 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FDA14328AA18BB00BC9509 /* ViewController.swift */; };
+		D8FDA14728AA18BB00BC9509 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8FDA14528AA18BB00BC9509 /* Main.storyboard */; };
+		D8FDA14928AA18BD00BC9509 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8FDA14828AA18BD00BC9509 /* Assets.xcassets */; };
+		D8FDA14C28AA18BD00BC9509 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8FDA14A28AA18BD00BC9509 /* LaunchScreen.storyboard */; };
+		D8FDA15728AA18BD00BC9509 /* Project4_MyAlbumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FDA15628AA18BD00BC9509 /* Project4_MyAlbumTests.swift */; };
+		D8FDA16128AA18BD00BC9509 /* Project4_MyAlbumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FDA16028AA18BD00BC9509 /* Project4_MyAlbumUITests.swift */; };
+		D8FDA16328AA18BD00BC9509 /* Project4_MyAlbumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FDA16228AA18BD00BC9509 /* Project4_MyAlbumUITestsLaunchTests.swift */; };
+		D8FDA17028AA18E500BC9509 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FDA16F28AA18E500BC9509 /* SecondViewController.swift */; };
+		D8FDA17228AA18FD00BC9509 /* FirstCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FDA17128AA18FD00BC9509 /* FirstCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D84931BB28A757B0002BF04D /* PBXContainerItemProxy */ = {
+		D8FDA15328AA18BD00BC9509 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D849319C28A757AE002BF04D /* Project object */;
+			containerPortal = D8FDA13428AA18BB00BC9509 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D84931A328A757AE002BF04D;
-			remoteInfo = MyAlbum;
+			remoteGlobalIDString = D8FDA13B28AA18BB00BC9509;
+			remoteInfo = "Project4-MyAlbum";
 		};
-		D84931C528A757B0002BF04D /* PBXContainerItemProxy */ = {
+		D8FDA15D28AA18BD00BC9509 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D849319C28A757AE002BF04D /* Project object */;
+			containerPortal = D8FDA13428AA18BB00BC9509 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D84931A328A757AE002BF04D;
-			remoteInfo = MyAlbum;
+			remoteGlobalIDString = D8FDA13B28AA18BB00BC9509;
+			remoteInfo = "Project4-MyAlbum";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D84931A428A757AE002BF04D /* MyAlbum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAlbum.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D84931A728A757AE002BF04D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D84931A928A757AE002BF04D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D84931AB28A757AE002BF04D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D84931AE28A757AE002BF04D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D84931B028A757B0002BF04D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D84931B328A757B0002BF04D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D84931B528A757B0002BF04D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D84931BA28A757B0002BF04D /* MyAlbumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAlbumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D84931BE28A757B0002BF04D /* MyAlbumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlbumTests.swift; sourceTree = "<group>"; };
-		D84931C428A757B0002BF04D /* MyAlbumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAlbumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D84931C828A757B0002BF04D /* MyAlbumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlbumUITests.swift; sourceTree = "<group>"; };
-		D84931CA28A757B0002BF04D /* MyAlbumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlbumUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D84931D728A75E4E002BF04D /* FirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionViewCell.swift; sourceTree = "<group>"; };
-		D8FDA13128AA0E2600BC9509 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		D8FDA13C28AA18BB00BC9509 /* Project4-MyAlbum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project4-MyAlbum.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8FDA13F28AA18BB00BC9509 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8FDA14128AA18BB00BC9509 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D8FDA14328AA18BB00BC9509 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D8FDA14628AA18BB00BC9509 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D8FDA14828AA18BD00BC9509 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8FDA14B28AA18BD00BC9509 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D8FDA14D28AA18BD00BC9509 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8FDA15228AA18BD00BC9509 /* Project4-MyAlbumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project4-MyAlbumTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8FDA15628AA18BD00BC9509 /* Project4_MyAlbumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project4_MyAlbumTests.swift; sourceTree = "<group>"; };
+		D8FDA15C28AA18BD00BC9509 /* Project4-MyAlbumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project4-MyAlbumUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8FDA16028AA18BD00BC9509 /* Project4_MyAlbumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project4_MyAlbumUITests.swift; sourceTree = "<group>"; };
+		D8FDA16228AA18BD00BC9509 /* Project4_MyAlbumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project4_MyAlbumUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D8FDA16F28AA18E500BC9509 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		D8FDA17128AA18FD00BC9509 /* FirstCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D84931A128A757AE002BF04D /* Frameworks */ = {
+		D8FDA13928AA18BB00BC9509 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D84931B728A757B0002BF04D /* Frameworks */ = {
+		D8FDA14F28AA18BD00BC9509 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D84931C128A757B0002BF04D /* Frameworks */ = {
+		D8FDA15928AA18BD00BC9509 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -80,139 +80,139 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D849319B28A757AE002BF04D = {
+		D8FDA13328AA18BB00BC9509 = {
 			isa = PBXGroup;
 			children = (
-				D84931A628A757AE002BF04D /* MyAlbum */,
-				D84931BD28A757B0002BF04D /* MyAlbumTests */,
-				D84931C728A757B0002BF04D /* MyAlbumUITests */,
-				D84931A528A757AE002BF04D /* Products */,
+				D8FDA13E28AA18BB00BC9509 /* Project4-MyAlbum */,
+				D8FDA15528AA18BD00BC9509 /* Project4-MyAlbumTests */,
+				D8FDA15F28AA18BD00BC9509 /* Project4-MyAlbumUITests */,
+				D8FDA13D28AA18BB00BC9509 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D84931A528A757AE002BF04D /* Products */ = {
+		D8FDA13D28AA18BB00BC9509 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D84931A428A757AE002BF04D /* MyAlbum.app */,
-				D84931BA28A757B0002BF04D /* MyAlbumTests.xctest */,
-				D84931C428A757B0002BF04D /* MyAlbumUITests.xctest */,
+				D8FDA13C28AA18BB00BC9509 /* Project4-MyAlbum.app */,
+				D8FDA15228AA18BD00BC9509 /* Project4-MyAlbumTests.xctest */,
+				D8FDA15C28AA18BD00BC9509 /* Project4-MyAlbumUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D84931A628A757AE002BF04D /* MyAlbum */ = {
+		D8FDA13E28AA18BB00BC9509 /* Project4-MyAlbum */ = {
 			isa = PBXGroup;
 			children = (
-				D84931A728A757AE002BF04D /* AppDelegate.swift */,
-				D84931A928A757AE002BF04D /* SceneDelegate.swift */,
-				D84931AB28A757AE002BF04D /* ViewController.swift */,
-				D84931D728A75E4E002BF04D /* FirstCollectionViewCell.swift */,
-				D84931AD28A757AE002BF04D /* Main.storyboard */,
-				D8FDA13128AA0E2600BC9509 /* SecondViewController.swift */,
-				D84931B028A757B0002BF04D /* Assets.xcassets */,
-				D84931B228A757B0002BF04D /* LaunchScreen.storyboard */,
-				D84931B528A757B0002BF04D /* Info.plist */,
+				D8FDA13F28AA18BB00BC9509 /* AppDelegate.swift */,
+				D8FDA14128AA18BB00BC9509 /* SceneDelegate.swift */,
+				D8FDA14328AA18BB00BC9509 /* ViewController.swift */,
+				D8FDA14528AA18BB00BC9509 /* Main.storyboard */,
+				D8FDA16F28AA18E500BC9509 /* SecondViewController.swift */,
+				D8FDA17128AA18FD00BC9509 /* FirstCollectionViewCell.swift */,
+				D8FDA14828AA18BD00BC9509 /* Assets.xcassets */,
+				D8FDA14A28AA18BD00BC9509 /* LaunchScreen.storyboard */,
+				D8FDA14D28AA18BD00BC9509 /* Info.plist */,
 			);
-			path = MyAlbum;
+			path = "Project4-MyAlbum";
 			sourceTree = "<group>";
 		};
-		D84931BD28A757B0002BF04D /* MyAlbumTests */ = {
+		D8FDA15528AA18BD00BC9509 /* Project4-MyAlbumTests */ = {
 			isa = PBXGroup;
 			children = (
-				D84931BE28A757B0002BF04D /* MyAlbumTests.swift */,
+				D8FDA15628AA18BD00BC9509 /* Project4_MyAlbumTests.swift */,
 			);
-			path = MyAlbumTests;
+			path = "Project4-MyAlbumTests";
 			sourceTree = "<group>";
 		};
-		D84931C728A757B0002BF04D /* MyAlbumUITests */ = {
+		D8FDA15F28AA18BD00BC9509 /* Project4-MyAlbumUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D84931C828A757B0002BF04D /* MyAlbumUITests.swift */,
-				D84931CA28A757B0002BF04D /* MyAlbumUITestsLaunchTests.swift */,
+				D8FDA16028AA18BD00BC9509 /* Project4_MyAlbumUITests.swift */,
+				D8FDA16228AA18BD00BC9509 /* Project4_MyAlbumUITestsLaunchTests.swift */,
 			);
-			path = MyAlbumUITests;
+			path = "Project4-MyAlbumUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D84931A328A757AE002BF04D /* MyAlbum */ = {
+		D8FDA13B28AA18BB00BC9509 /* Project4-MyAlbum */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D84931CE28A757B0002BF04D /* Build configuration list for PBXNativeTarget "MyAlbum" */;
+			buildConfigurationList = D8FDA16628AA18BD00BC9509 /* Build configuration list for PBXNativeTarget "Project4-MyAlbum" */;
 			buildPhases = (
-				D84931A028A757AE002BF04D /* Sources */,
-				D84931A128A757AE002BF04D /* Frameworks */,
-				D84931A228A757AE002BF04D /* Resources */,
+				D8FDA13828AA18BB00BC9509 /* Sources */,
+				D8FDA13928AA18BB00BC9509 /* Frameworks */,
+				D8FDA13A28AA18BB00BC9509 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MyAlbum;
-			productName = MyAlbum;
-			productReference = D84931A428A757AE002BF04D /* MyAlbum.app */;
+			name = "Project4-MyAlbum";
+			productName = "Project4-MyAlbum";
+			productReference = D8FDA13C28AA18BB00BC9509 /* Project4-MyAlbum.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D84931B928A757B0002BF04D /* MyAlbumTests */ = {
+		D8FDA15128AA18BD00BC9509 /* Project4-MyAlbumTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D84931D128A757B0002BF04D /* Build configuration list for PBXNativeTarget "MyAlbumTests" */;
+			buildConfigurationList = D8FDA16928AA18BD00BC9509 /* Build configuration list for PBXNativeTarget "Project4-MyAlbumTests" */;
 			buildPhases = (
-				D84931B628A757B0002BF04D /* Sources */,
-				D84931B728A757B0002BF04D /* Frameworks */,
-				D84931B828A757B0002BF04D /* Resources */,
+				D8FDA14E28AA18BD00BC9509 /* Sources */,
+				D8FDA14F28AA18BD00BC9509 /* Frameworks */,
+				D8FDA15028AA18BD00BC9509 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D84931BC28A757B0002BF04D /* PBXTargetDependency */,
+				D8FDA15428AA18BD00BC9509 /* PBXTargetDependency */,
 			);
-			name = MyAlbumTests;
-			productName = MyAlbumTests;
-			productReference = D84931BA28A757B0002BF04D /* MyAlbumTests.xctest */;
+			name = "Project4-MyAlbumTests";
+			productName = "Project4-MyAlbumTests";
+			productReference = D8FDA15228AA18BD00BC9509 /* Project4-MyAlbumTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D84931C328A757B0002BF04D /* MyAlbumUITests */ = {
+		D8FDA15B28AA18BD00BC9509 /* Project4-MyAlbumUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D84931D428A757B0002BF04D /* Build configuration list for PBXNativeTarget "MyAlbumUITests" */;
+			buildConfigurationList = D8FDA16C28AA18BD00BC9509 /* Build configuration list for PBXNativeTarget "Project4-MyAlbumUITests" */;
 			buildPhases = (
-				D84931C028A757B0002BF04D /* Sources */,
-				D84931C128A757B0002BF04D /* Frameworks */,
-				D84931C228A757B0002BF04D /* Resources */,
+				D8FDA15828AA18BD00BC9509 /* Sources */,
+				D8FDA15928AA18BD00BC9509 /* Frameworks */,
+				D8FDA15A28AA18BD00BC9509 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D84931C628A757B0002BF04D /* PBXTargetDependency */,
+				D8FDA15E28AA18BD00BC9509 /* PBXTargetDependency */,
 			);
-			name = MyAlbumUITests;
-			productName = MyAlbumUITests;
-			productReference = D84931C428A757B0002BF04D /* MyAlbumUITests.xctest */;
+			name = "Project4-MyAlbumUITests";
+			productName = "Project4-MyAlbumUITests";
+			productReference = D8FDA15C28AA18BD00BC9509 /* Project4-MyAlbumUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D849319C28A757AE002BF04D /* Project object */ = {
+		D8FDA13428AA18BB00BC9509 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					D84931A328A757AE002BF04D = {
+					D8FDA13B28AA18BB00BC9509 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
-					D84931B928A757B0002BF04D = {
+					D8FDA15128AA18BD00BC9509 = {
 						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = D84931A328A757AE002BF04D;
+						TestTargetID = D8FDA13B28AA18BB00BC9509;
 					};
-					D84931C328A757B0002BF04D = {
+					D8FDA15B28AA18BD00BC9509 = {
 						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = D84931A328A757AE002BF04D;
+						TestTargetID = D8FDA13B28AA18BB00BC9509;
 					};
 				};
 			};
-			buildConfigurationList = D849319F28A757AE002BF04D /* Build configuration list for PBXProject "MyAlbum" */;
+			buildConfigurationList = D8FDA13728AA18BB00BC9509 /* Build configuration list for PBXProject "Project4-MyAlbum" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -220,37 +220,37 @@
 				en,
 				Base,
 			);
-			mainGroup = D849319B28A757AE002BF04D;
-			productRefGroup = D84931A528A757AE002BF04D /* Products */;
+			mainGroup = D8FDA13328AA18BB00BC9509;
+			productRefGroup = D8FDA13D28AA18BB00BC9509 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D84931A328A757AE002BF04D /* MyAlbum */,
-				D84931B928A757B0002BF04D /* MyAlbumTests */,
-				D84931C328A757B0002BF04D /* MyAlbumUITests */,
+				D8FDA13B28AA18BB00BC9509 /* Project4-MyAlbum */,
+				D8FDA15128AA18BD00BC9509 /* Project4-MyAlbumTests */,
+				D8FDA15B28AA18BD00BC9509 /* Project4-MyAlbumUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D84931A228A757AE002BF04D /* Resources */ = {
+		D8FDA13A28AA18BB00BC9509 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D84931B428A757B0002BF04D /* LaunchScreen.storyboard in Resources */,
-				D84931B128A757B0002BF04D /* Assets.xcassets in Resources */,
-				D84931AF28A757AE002BF04D /* Main.storyboard in Resources */,
+				D8FDA14C28AA18BD00BC9509 /* LaunchScreen.storyboard in Resources */,
+				D8FDA14928AA18BD00BC9509 /* Assets.xcassets in Resources */,
+				D8FDA14728AA18BB00BC9509 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D84931B828A757B0002BF04D /* Resources */ = {
+		D8FDA15028AA18BD00BC9509 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D84931C228A757B0002BF04D /* Resources */ = {
+		D8FDA15A28AA18BD00BC9509 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -260,63 +260,63 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D84931A028A757AE002BF04D /* Sources */ = {
+		D8FDA13828AA18BB00BC9509 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D84931AC28A757AE002BF04D /* ViewController.swift in Sources */,
-				D84931A828A757AE002BF04D /* AppDelegate.swift in Sources */,
-				D84931AA28A757AE002BF04D /* SceneDelegate.swift in Sources */,
-				D8FDA13228AA0E2600BC9509 /* SecondViewController.swift in Sources */,
-				D84931D828A75E4E002BF04D /* FirstCollectionViewCell.swift in Sources */,
+				D8FDA17228AA18FD00BC9509 /* FirstCollectionViewCell.swift in Sources */,
+				D8FDA17028AA18E500BC9509 /* SecondViewController.swift in Sources */,
+				D8FDA14428AA18BB00BC9509 /* ViewController.swift in Sources */,
+				D8FDA14028AA18BB00BC9509 /* AppDelegate.swift in Sources */,
+				D8FDA14228AA18BB00BC9509 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D84931B628A757B0002BF04D /* Sources */ = {
+		D8FDA14E28AA18BD00BC9509 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D84931BF28A757B0002BF04D /* MyAlbumTests.swift in Sources */,
+				D8FDA15728AA18BD00BC9509 /* Project4_MyAlbumTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D84931C028A757B0002BF04D /* Sources */ = {
+		D8FDA15828AA18BD00BC9509 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D84931CB28A757B0002BF04D /* MyAlbumUITestsLaunchTests.swift in Sources */,
-				D84931C928A757B0002BF04D /* MyAlbumUITests.swift in Sources */,
+				D8FDA16128AA18BD00BC9509 /* Project4_MyAlbumUITests.swift in Sources */,
+				D8FDA16328AA18BD00BC9509 /* Project4_MyAlbumUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D84931BC28A757B0002BF04D /* PBXTargetDependency */ = {
+		D8FDA15428AA18BD00BC9509 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D84931A328A757AE002BF04D /* MyAlbum */;
-			targetProxy = D84931BB28A757B0002BF04D /* PBXContainerItemProxy */;
+			target = D8FDA13B28AA18BB00BC9509 /* Project4-MyAlbum */;
+			targetProxy = D8FDA15328AA18BD00BC9509 /* PBXContainerItemProxy */;
 		};
-		D84931C628A757B0002BF04D /* PBXTargetDependency */ = {
+		D8FDA15E28AA18BD00BC9509 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D84931A328A757AE002BF04D /* MyAlbum */;
-			targetProxy = D84931C528A757B0002BF04D /* PBXContainerItemProxy */;
+			target = D8FDA13B28AA18BB00BC9509 /* Project4-MyAlbum */;
+			targetProxy = D8FDA15D28AA18BD00BC9509 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D84931AD28A757AE002BF04D /* Main.storyboard */ = {
+		D8FDA14528AA18BB00BC9509 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D84931AE28A757AE002BF04D /* Base */,
+				D8FDA14628AA18BB00BC9509 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		D84931B228A757B0002BF04D /* LaunchScreen.storyboard */ = {
+		D8FDA14A28AA18BD00BC9509 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D84931B328A757B0002BF04D /* Base */,
+				D8FDA14B28AA18BD00BC9509 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -324,7 +324,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D84931CC28A757B0002BF04D /* Debug */ = {
+		D8FDA16428AA18BD00BC9509 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -384,7 +384,7 @@
 			};
 			name = Debug;
 		};
-		D84931CD28A757B0002BF04D /* Release */ = {
+		D8FDA16528AA18BD00BC9509 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -438,7 +438,7 @@
 			};
 			name = Release;
 		};
-		D84931CF28A757B0002BF04D /* Debug */ = {
+		D8FDA16728AA18BD00BC9509 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -447,7 +447,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TK8FVHX9VB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyAlbum/Info.plist;
+				INFOPLIST_FILE = "Project4-MyAlbum/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -458,7 +458,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "C-HW.MyAlbum";
+				PRODUCT_BUNDLE_IDENTIFIER = "C-HW.Project4-MyAlbum";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -466,7 +466,7 @@
 			};
 			name = Debug;
 		};
-		D84931D028A757B0002BF04D /* Release */ = {
+		D8FDA16828AA18BD00BC9509 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -475,7 +475,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TK8FVHX9VB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyAlbum/Info.plist;
+				INFOPLIST_FILE = "Project4-MyAlbum/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -486,7 +486,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "C-HW.MyAlbum";
+				PRODUCT_BUNDLE_IDENTIFIER = "C-HW.Project4-MyAlbum";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -494,7 +494,7 @@
 			};
 			name = Release;
 		};
-		D84931D228A757B0002BF04D /* Debug */ = {
+		D8FDA16A28AA18BD00BC9509 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -505,16 +505,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "C-HW.MyAlbumTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "C-HW.Project4-MyAlbumTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyAlbum.app/MyAlbum";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project4-MyAlbum.app/Project4-MyAlbum";
 			};
 			name = Debug;
 		};
-		D84931D328A757B0002BF04D /* Release */ = {
+		D8FDA16B28AA18BD00BC9509 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -525,16 +525,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "C-HW.MyAlbumTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "C-HW.Project4-MyAlbumTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyAlbum.app/MyAlbum";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project4-MyAlbum.app/Project4-MyAlbum";
 			};
 			name = Release;
 		};
-		D84931D528A757B0002BF04D /* Debug */ = {
+		D8FDA16D28AA18BD00BC9509 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -543,16 +543,16 @@
 				DEVELOPMENT_TEAM = TK8FVHX9VB;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "C-HW.MyAlbumUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "C-HW.Project4-MyAlbumUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MyAlbum;
+				TEST_TARGET_NAME = "Project4-MyAlbum";
 			};
 			name = Debug;
 		};
-		D84931D628A757B0002BF04D /* Release */ = {
+		D8FDA16E28AA18BD00BC9509 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -561,55 +561,55 @@
 				DEVELOPMENT_TEAM = TK8FVHX9VB;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "C-HW.MyAlbumUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "C-HW.Project4-MyAlbumUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MyAlbum;
+				TEST_TARGET_NAME = "Project4-MyAlbum";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D849319F28A757AE002BF04D /* Build configuration list for PBXProject "MyAlbum" */ = {
+		D8FDA13728AA18BB00BC9509 /* Build configuration list for PBXProject "Project4-MyAlbum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D84931CC28A757B0002BF04D /* Debug */,
-				D84931CD28A757B0002BF04D /* Release */,
+				D8FDA16428AA18BD00BC9509 /* Debug */,
+				D8FDA16528AA18BD00BC9509 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D84931CE28A757B0002BF04D /* Build configuration list for PBXNativeTarget "MyAlbum" */ = {
+		D8FDA16628AA18BD00BC9509 /* Build configuration list for PBXNativeTarget "Project4-MyAlbum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D84931CF28A757B0002BF04D /* Debug */,
-				D84931D028A757B0002BF04D /* Release */,
+				D8FDA16728AA18BD00BC9509 /* Debug */,
+				D8FDA16828AA18BD00BC9509 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D84931D128A757B0002BF04D /* Build configuration list for PBXNativeTarget "MyAlbumTests" */ = {
+		D8FDA16928AA18BD00BC9509 /* Build configuration list for PBXNativeTarget "Project4-MyAlbumTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D84931D228A757B0002BF04D /* Debug */,
-				D84931D328A757B0002BF04D /* Release */,
+				D8FDA16A28AA18BD00BC9509 /* Debug */,
+				D8FDA16B28AA18BD00BC9509 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D84931D428A757B0002BF04D /* Build configuration list for PBXNativeTarget "MyAlbumUITests" */ = {
+		D8FDA16C28AA18BD00BC9509 /* Build configuration list for PBXNativeTarget "Project4-MyAlbumUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D84931D528A757B0002BF04D /* Debug */,
-				D84931D628A757B0002BF04D /* Release */,
+				D8FDA16D28AA18BD00BC9509 /* Debug */,
+				D8FDA16E28AA18BD00BC9509 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D849319C28A757AE002BF04D /* Project object */;
+	rootObject = D8FDA13428AA18BB00BC9509 /* Project object */;
 }

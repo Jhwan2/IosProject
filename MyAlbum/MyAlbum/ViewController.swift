@@ -28,12 +28,15 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
         static let count = 3
     }
     
+    enum SegueIdentifier: String {
+        case showAllPhotos
+        case showCollection
+    }
     
     
+    //MARK: Photo load Method
     func requestCollection(){
         
-        
-
         let cameraRoll: PHFetchResult<PHAssetCollection> = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil) // 앨범 검색 ?
 
         guard let cameraRollColletion = cameraRoll.firstObject else { return }
@@ -50,7 +53,7 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
         userCollections = PHCollectionList.fetchTopLevelUserCollections(with: nil)
 
     }
-    
+    //MARK: collectionView Method
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return Section.count
     }
@@ -68,20 +71,25 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
         let cell: FirstCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! FirstCollectionViewCell
         switch Section(rawValue: indexPath.section)! {
         case .allPhotos:
+            let asset = allPhotos.object(at: indexPath.item)
+            
+            imageManager.requestImage(for: asset, targetSize: CGSize(width: 30, height: 30), contentMode: .aspectFill, options: nil, resultHandler: { image, _ in cell.imageView.image = image })
             cell.nameLabel.text = NSLocalizedString("All Photos", comment: "")
             cell.numOfCountLabel.text = String(allPhotos.count)
             return cell
             
         case .smartAlbums:
-            let collection: PHCollection = smartAlbums.object(at: indexPath.item)
+            let collection: PHCollection = smartAlbums.object(at: indexPath.row)
 //            guard let assetCollection = collection as? PHAssetCollection
 //                else { fatalError("Expected an asset collection.") }
 //
 //            fetchResult = PHAsset.fetchAssets(in: assetCollection, options: nil)
 //
 //            let asset = fetchResult.object(at: indexPath.item)
-//
+            
+            
 //            imageManager.requestImage(for: asset, targetSize: CGSize(width: 30, height: 30), contentMode: .aspectFill, options: nil, resultHandler: { image, _ in cell.imageView.image = image })
+            
             
             cell.nameLabel.text = collection.localizedTitle
             cell.numOfCountLabel.text = String(smartAlbums.count)
@@ -89,20 +97,25 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
             return cell
             
         case .userCollections:
-            let collection = userCollections.object(at: indexPath.row)
+            let collection: PHCollection = userCollections.object(at: indexPath.item)
+            guard let assetCollection = collection as? PHAssetCollection
+                else { fatalError("Expected an asset collection.") }
+
+            fetchResult = PHAsset.fetchAssets(in: assetCollection, options: nil)
+
+            let asset = fetchResult.object(at: indexPath.item)
+            
+            
+            imageManager.requestImage(for: asset, targetSize: CGSize(width: 30, height: 30), contentMode: .aspectFill, options: nil, resultHandler: { image, _ in cell.imageView.image = image })
+            
+            
             cell.nameLabel.text = collection.localizedTitle
             cell.numOfCountLabel.text = String(userCollections.count)
             return cell
         }
         
     }
-    
-    
-    
-    
-    
-    
-
+    //MARK: View load Method
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -141,5 +154,44 @@ class ViewController: UIViewController, UICollectionViewDataSource,UICollectionV
         }
     }
 
+    
+    
+    
+    
+    // MARK: - Navigation
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destination.
+//        // Pass the selected object to the new view controller.
+//        guard let nextViewcontroller: SecondViewController = segue.destination as? SecondViewController else {
+//            return
+//        }
+//        guard let cell = sender as? FirstCollectionViewCell else { fatalError("Unexpected sender for segue.") }
+//        
+//        nextViewcontroller.title = cell.nameLabel.text
+//        
+//
+//
+//            nextViewcontroller.fetchResult = allPhotos
+//            // Fetch the asset collection for the selected row.
+//            let indexPath = collectionView.indexPath(for: cell)!
+//            let collection: PHCollection
+//            switch Section(rawValue: indexPath.section)! {
+//            case .smartAlbums:
+//                collection = smartAlbums.object(at: indexPath.item)
+//            case .userCollections:
+//                collection = userCollections.object(at: indexPath.item)
+//            default: return // The default indicates that other segues have already handled the photos section.
+//            }
+//            
+//            // configure the view controller with the asset collection
+//            guard let assetCollection = collection as? PHAssetCollection
+//                else { fatalError("Expected an asset collection.") }
+//            nextViewcontroller.fetchResult = PHAsset.fetchAssets(in: assetCollection, options: nil)
+//            nextViewcontroller.assetCollection = assetCollection
+//        
+//        
+//    }
+    
 }
 
