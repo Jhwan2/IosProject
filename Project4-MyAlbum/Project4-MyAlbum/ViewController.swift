@@ -8,26 +8,42 @@
 import UIKit
 import Photos
 
+extension PHAssetCollection {
+    
+    // MARK: - Public methods
+    func hasAssets() -> Bool {
+        let assets = PHAsset.fetchAssets(in: self, options: nil)
+        return assets.count > 0
+    }
+    
+}
+
 class ViewController: UIViewController, UICollectionViewDataSource {
     
     @IBOutlet private var collectionView: UICollectionView!
-    var allPhotos: PHFetchResult<PHAsset>! // 불러온 이미지의 배열
-    var favoritePhotos: PHFetchResult<PHAssetCollection>!
-    var userCollections: PHFetchResult<PHCollection>!
+    var customAlbum: [PHAssetCollection] = []
+    
     var fetchResult: PHFetchResult<PHAsset>!
     let imageManager: PHCachingImageManager = PHCachingImageManager() //이미지 에셋 관리
     let cellIdentifier: String = "FirstCell" //식별용
+
     
     //MARK: Photo load Method
     func requestCollection(){
-
-        let fetchOptions = PHFetchOptions() //에셋 또는 컬렉션 객체를 가져올 때 Photos에서 반환하는 결과에 필터링, 정렬 등 영향을 주는 옵션입니다.
-        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-
         
-        allPhotos = PHAsset.fetchAssets(with: fetchOptions)
-        favoritePhotos = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: nil)
-        userCollections = PHCollectionList.fetchTopLevelUserCollections(with: nil)
+        customAlbum.removeAll()
+        let result = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: nil)
+//        let result2 = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
+        result.enumerateObjects({ (collection, _, _) in
+            if (collection.hasAssets()) {
+                self.customAlbum.append(collection)
+            }
+        })
+//        result2.enumerateObjects({ (collection, _, _) in
+//            if (collection.hasAssets()) {
+//                self.customAlbum.append(collection)
+//            }
+//        })
 
     }
 
@@ -71,27 +87,27 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //print(userCollections.count)
-        return favoritePhotos.count
+        return customAlbum.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell: FirstCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! FirstCollectionViewCell
         
-        let collection: PHCollection = favoritePhotos.object(at: indexPath.item)
-        guard let assetCollection = collection as? PHAssetCollection
-            else { fatalError("Expected an asset collection.") }
+        
+//        let collection: PHCollection = userCollections.object(at: indexPath.item)
+//        guard let assetCollection = collection as? PHAssetCollection
+//            else { fatalError("Expected an asset collection.") }
 
-        fetchResult = PHAsset.fetchAssets(in: assetCollection, options: nil)
+        fetchResult = PHAsset.fetchAssets(in: customAlbum[indexPath.item], options: nil)
 
         let asset = fetchResult.object(at: indexPath.item)
-        
         
         imageManager.requestImage(for: asset, targetSize: CGSize(width: 30, height: 30), contentMode: .aspectFill, options: nil, resultHandler: { image, _ in cell.ImageView.image = image })
         
         
-        cell.nameLabel.text = collection.localizedTitle
-        cell.numLabel.text = String(favoritePhotos.count)
+        cell.nameLabel.text = customAlbum[indexPath.row].localizedTitle
+        cell.numLabel.text = String(fetchResult.count)
         return cell
     }
             
