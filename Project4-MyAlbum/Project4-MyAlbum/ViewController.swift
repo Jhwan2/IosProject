@@ -18,8 +18,8 @@ extension PHAssetCollection {
     
 }
 
-class ViewController: UIViewController, UICollectionViewDataSource {
-    
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    //MARK: Property
     @IBOutlet private var collectionView: UICollectionView!
     var customAlbum: [PHAssetCollection] = []
     
@@ -31,24 +31,40 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     //MARK: Photo load Method
     func requestCollection(){
         
+        let fetchOptions = PHFetchOptions() //에셋 또는 컬렉션 객체를 가져올 때 Photos에서 반환하는 결과에 필터링, 정렬 등 영향을 주는 옵션입니다.
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "startDate", ascending: false)]
+        
         customAlbum.removeAll()
-        let result = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: nil)
-//        let result2 = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
+        let result = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: fetchOptions)
+        let result2 = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: fetchOptions)
+
+        
         result.enumerateObjects({ (collection, _, _) in
             if (collection.hasAssets()) {
                 self.customAlbum.append(collection)
             }
         })
-//        result2.enumerateObjects({ (collection, _, _) in
-//            if (collection.hasAssets()) {
-//                self.customAlbum.append(collection)
-//            }
-//        })
+        result2.enumerateObjects({ (collection, _, _) in
+            if (collection.hasAssets()) {
+                self.customAlbum.append(collection)
+            }
+        })
 
     }
-
+    // MARK: - Controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let flowLayout: UICollectionViewFlowLayout
+        flowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = UIEdgeInsets.zero
+        flowLayout.minimumInteritemSpacing = 5
+        flowLayout.minimumLineSpacing = 5
+        let halfWidth: CGFloat = UIScreen.main.bounds.width / 2.0
+        flowLayout.itemSize = CGSize(width: halfWidth - 30, height: 200)
+        
+        self.collectionView.collectionViewLayout = flowLayout
+        
         // Do any additional setup after loading the view.
         let photoAurhorizationStatus = PHPhotoLibrary.authorizationStatus()
         
@@ -84,9 +100,8 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         }
     }
     
-    
+    // MARK: - UICollectionView Method
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //print(userCollections.count)
         return customAlbum.count
     }
     
@@ -98,21 +113,43 @@ class ViewController: UIViewController, UICollectionViewDataSource {
 //        let collection: PHCollection = userCollections.object(at: indexPath.item)
 //        guard let assetCollection = collection as? PHAssetCollection
 //            else { fatalError("Expected an asset collection.") }
-
+        
+        
         fetchResult = PHAsset.fetchAssets(in: customAlbum[indexPath.item], options: nil)
+        cell.album = fetchResult
+        print(cell.album.count)
 
-        let asset = fetchResult.object(at: indexPath.item)
-        
-        imageManager.requestImage(for: asset, targetSize: CGSize(width: 30, height: 30), contentMode: .aspectFill, options: nil, resultHandler: { image, _ in cell.ImageView.image = image })
-        
-        
+        let asset = fetchResult.firstObject
+
+        imageManager.requestImage(for: asset!, targetSize: CGSize(width: 30, height: 30), contentMode: .aspectFill, options: nil, resultHandler: { image, _ in cell.ImageView.image = image })
         cell.nameLabel.text = customAlbum[indexPath.row].localizedTitle
         cell.numLabel.text = String(fetchResult.count)
         return cell
     }
             
 
+    
+    // MARK: - Segue
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        guard let nextViewcontroller: SecondViewController = segue.destination as? SecondViewController else {
+            return
+        }
+        
+        guard let cell: FirstCollectionViewCell = sender as? FirstCollectionViewCell else {
+            return
+        }
+        nextViewcontroller.title = cell.nameLabel.text
+        print("@@@@@@@@@@@@@@@@@@")
+        print(cell.album.count)
+        nextViewcontroller.selectAlbum = cell.album
+
+    }
+    
 
 
 }

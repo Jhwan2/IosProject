@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Photos
 
 class FirstCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var numLabel: UILabel!
     @IBOutlet weak var ImageView: UIImageView!
+    var album: PHFetchResult<PHAsset>!
     
     
 }
