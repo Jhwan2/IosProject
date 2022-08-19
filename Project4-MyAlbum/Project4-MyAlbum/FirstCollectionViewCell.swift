@@ -15,5 +15,4 @@ class FirstCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ImageView: UIImageView!
     var album: PHFetchResult<PHAsset>!
     
-    
 }

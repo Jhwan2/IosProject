@@ -16,9 +16,11 @@ extension PHAssetCollection {
         return assets.count > 0
     }
     
+    
+    
 }
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     //MARK: Property
     @IBOutlet private var collectionView: UICollectionView!
     var customAlbum: [PHAssetCollection] = []
@@ -26,6 +28,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var fetchResult: PHFetchResult<PHAsset>!
     let imageManager: PHCachingImageManager = PHCachingImageManager() //이미지 에셋 관리
     let cellIdentifier: String = "FirstCell" //식별용
+    let numbeOfItemsInRow = 10
 
     
     //MARK: Photo load Method
@@ -54,16 +57,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // MARK: - Controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let flowLayout: UICollectionViewFlowLayout
-        flowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = UIEdgeInsets.zero
-        flowLayout.minimumInteritemSpacing = 5
-        flowLayout.minimumLineSpacing = 5
-        let halfWidth: CGFloat = UIScreen.main.bounds.width / 2.0
-        flowLayout.itemSize = CGSize(width: halfWidth - 30, height: 200)
-        
-        self.collectionView.collectionViewLayout = flowLayout
         
         // Do any additional setup after loading the view.
         let photoAurhorizationStatus = PHPhotoLibrary.authorizationStatus()
@@ -98,6 +91,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         @unknown default:
             print("de end ??")
         }
+
     }
     
     // MARK: - UICollectionView Method
@@ -117,11 +111,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         fetchResult = PHAsset.fetchAssets(in: customAlbum[indexPath.item], options: nil)
         cell.album = fetchResult
-        print(cell.album.count)
 
         let asset = fetchResult.firstObject
 
-        imageManager.requestImage(for: asset!, targetSize: CGSize(width: 30, height: 30), contentMode: .aspectFill, options: nil, resultHandler: { image, _ in cell.ImageView.image = image })
+        imageManager.requestImage(for: asset!, targetSize: CGSize(width: 30, height: 30), contentMode: .aspectFill, options: nil, resultHandler: { image, _ in cell.ImageView.image = image
+//            cell.ImageView.layer.cornerRadius = cell.ImageView.frame.width/15
+//            cell.ImageView.clipsToBounds = true
+        })
         cell.nameLabel.text = customAlbum[indexPath.row].localizedTitle
         cell.numLabel.text = String(fetchResult.count)
         return cell
@@ -144,11 +140,29 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             return
         }
         nextViewcontroller.title = cell.nameLabel.text
-        print("@@@@@@@@@@@@@@@@@@")
-        print(cell.album.count)
         nextViewcontroller.selectAlbum = cell.album
 
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        //return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        return UIEdgeInsets.init(top: 20, left: 20, bottom: 20, right: 20)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (Int(UIScreen.main.bounds.size.width) - (numbeOfItemsInRow - 1) * 10 - 40) / numbeOfItemsInRow
+        return CGSize(width: width, height: width + 36)
+    }
+    
     
 
 
