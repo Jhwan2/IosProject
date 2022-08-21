@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D834260428AE2A28004C2209 /* SecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834260328AE2A28004C2209 /* SecondCollectionViewCell.swift */; };
+		D834260828B24BEC004C2209 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834260728B24BEC004C2209 /* ThirdViewController.swift */; };
 		D8FDA14028AA18BB00BC9509 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FDA13F28AA18BB00BC9509 /* AppDelegate.swift */; };
 		D8FDA14228AA18BB00BC9509 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FDA14128AA18BB00BC9509 /* SceneDelegate.swift */; };
 		D8FDA14428AA18BB00BC9509 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FDA14328AA18BB00BC9509 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		D834260328AE2A28004C2209 /* SecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCell.swift; sourceTree = "<group>"; };
+		D834260728B24BEC004C2209 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		D8FDA13C28AA18BB00BC9509 /* Project4-MyAlbum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project4-MyAlbum.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FDA13F28AA18BB00BC9509 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8FDA14128AA18BB00BC9509 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D834260528B24735004C2209 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D834260328AE2A28004C2209 /* SecondCollectionViewCell.swift */,
+				D8FDA17128AA18FD00BC9509 /* FirstCollectionViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		D834260628B24756004C2209 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D8FDA14328AA18BB00BC9509 /* ViewController.swift */,
+				D8FDA16F28AA18E500BC9509 /* SecondViewController.swift */,
+				D834260728B24BEC004C2209 /* ThirdViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		D8FDA13328AA18BB00BC9509 = {
 			isa = PBXGroup;
 			children = (
@@ -107,11 +128,9 @@
 			children = (
 				D8FDA13F28AA18BB00BC9509 /* AppDelegate.swift */,
 				D8FDA14128AA18BB00BC9509 /* SceneDelegate.swift */,
-				D8FDA14328AA18BB00BC9509 /* ViewController.swift */,
+				D834260628B24756004C2209 /* ViewController */,
+				D834260528B24735004C2209 /* Cell */,
 				D8FDA14528AA18BB00BC9509 /* Main.storyboard */,
-				D8FDA16F28AA18E500BC9509 /* SecondViewController.swift */,
-				D834260328AE2A28004C2209 /* SecondCollectionViewCell.swift */,
-				D8FDA17128AA18FD00BC9509 /* FirstCollectionViewCell.swift */,
 				D8FDA14828AA18BD00BC9509 /* Assets.xcassets */,
 				D8FDA14A28AA18BD00BC9509 /* LaunchScreen.storyboard */,
 				D8FDA14D28AA18BD00BC9509 /* Info.plist */,
@@ -217,7 +236,7 @@
 			};
 			buildConfigurationList = D8FDA13728AA18BB00BC9509 /* Build configuration list for PBXProject "Project4-MyAlbum" */;
 			compatibilityVersion = "Xcode 13.0";
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -270,6 +289,7 @@
 				D8FDA17228AA18FD00BC9509 /* FirstCollectionViewCell.swift in Sources */,
 				D8FDA17028AA18E500BC9509 /* SecondViewController.swift in Sources */,
 				D834260428AE2A28004C2209 /* SecondCollectionViewCell.swift in Sources */,
+				D834260828B24BEC004C2209 /* ThirdViewController.swift in Sources */,
 				D8FDA14428AA18BB00BC9509 /* ViewController.swift in Sources */,
 				D8FDA14028AA18BB00BC9509 /* AppDelegate.swift in Sources */,
 				D8FDA14228AA18BB00BC9509 /* SceneDelegate.swift in Sources */,

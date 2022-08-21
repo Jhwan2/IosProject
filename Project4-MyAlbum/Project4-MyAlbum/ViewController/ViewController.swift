@@ -9,26 +9,22 @@ import UIKit
 import Photos
 
 extension PHAssetCollection {
-    
     // MARK: - Public methods
     func hasAssets() -> Bool {
         let assets = PHAsset.fetchAssets(in: self, options: nil)
         return assets.count > 0
     }
-    
-    
-    
 }
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
-    //MARK: Property
+    //MARK: Vars & Lets
     @IBOutlet private var collectionView: UICollectionView!
     var customAlbum: [PHAssetCollection] = []
     
     var fetchResult: PHFetchResult<PHAsset>!
     let imageManager: PHCachingImageManager = PHCachingImageManager() //이미지 에셋 관리
     let cellIdentifier: String = "FirstCell" //식별용
-    let numbeOfItemsInRow = 10
+    let numbeOfItemsInRow = 2
 
     
     //MARK: Photo load Method
@@ -94,7 +90,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     }
     
-    // MARK: - UICollectionView Method
+    // MARK: - UICollectionView setting
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return customAlbum.count
     }
@@ -103,20 +99,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         let cell: FirstCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! FirstCollectionViewCell
         
-        
-//        let collection: PHCollection = userCollections.object(at: indexPath.item)
-//        guard let assetCollection = collection as? PHAssetCollection
-//            else { fatalError("Expected an asset collection.") }
-        
-        
         fetchResult = PHAsset.fetchAssets(in: customAlbum[indexPath.item], options: nil)
         cell.album = fetchResult
 
-        let asset = fetchResult.firstObject
+        let asset = fetchResult.lastObject
+        let option = PHImageRequestOptions()
 
-        imageManager.requestImage(for: asset!, targetSize: CGSize(width: 30, height: 30), contentMode: .aspectFill, options: nil, resultHandler: { image, _ in cell.ImageView.image = image
-//            cell.ImageView.layer.cornerRadius = cell.ImageView.frame.width/15
-//            cell.ImageView.clipsToBounds = true
+        imageManager.requestImage(for: asset!, targetSize: CGSize(width: cell.ImageView.frame.width, height: cell.ImageView.frame.height), contentMode: .aspectFill, options: option, resultHandler: { image, _ in cell.ImageView.image = image
+            cell.ImageView.layer.cornerRadius = cell.ImageView.frame.width/20
+            cell.ImageView.clipsToBounds = true
+            
         })
         cell.nameLabel.text = customAlbum[indexPath.row].localizedTitle
         cell.numLabel.text = String(fetchResult.count)
@@ -141,10 +133,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         nextViewcontroller.title = cell.nameLabel.text
         nextViewcontroller.selectAlbum = cell.album
-
     }
     
-    
+    //MARK: collectionViewFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
@@ -157,10 +148,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         //return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         return UIEdgeInsets.init(top: 20, left: 20, bottom: 20, right: 20)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (Int(UIScreen.main.bounds.size.width) - (numbeOfItemsInRow - 1) * 10 - 40) / numbeOfItemsInRow
-        return CGSize(width: width, height: width + 36)
+        return CGSize(width: width, height: width + 36 + 100)
     }
     
     

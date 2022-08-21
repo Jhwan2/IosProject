@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Photos
 
 class SecondCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imageView: UIImageView!
+    var selectImage: PHAsset!
   
     
 }

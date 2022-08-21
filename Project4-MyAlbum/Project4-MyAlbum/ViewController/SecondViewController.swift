@@ -9,24 +9,33 @@ import UIKit
 import Photos
 
 class SecondViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
+    //MARK: Outlet & Vars & Lets
     @IBOutlet var collectionView: UICollectionView!
     var selectAlbum: PHFetchResult<PHAsset>!
     let Identifier: String = "SecondCell"
     private var myAlbum: PHFetchResult<PHAsset>!
     let imageManager: PHCachingImageManager = PHCachingImageManager()
     private let numbeOfItemsInRow = 3
+    var widths = 0
+    let dateFormatter: DateFormatter = {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.dateFormat = "yyyy - MM - dd"
+        return formatter
+    }()
+    let timeFormatter: DateFormatter = {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.locale = Locale(identifier:"ko_KR")
+        formatter.dateFormat = "a hh : mm "
+        return formatter
+    }()
     
-    
-
+    // MARK: - Controller lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.myAlbum = selectAlbum
-        
-
         // Do any additional setup after loading the view.
     }
-    
+    // MARK: - UICollectionView setting
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if myAlbum.count != 0{
             return myAlbum.count
@@ -41,10 +50,16 @@ class SecondViewController: UIViewController, UICollectionViewDataSource, UIColl
         let cell: SecondCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifier, for: indexPath) as! SecondCollectionViewCell
         
         //cell.imageView  = UIImageView(frame: CGRect(x: 10, y: 10, width: 120, height: 120))
-        cell.imageView.contentMode = .scaleAspectFit
+        cell.imageView.contentMode = .scaleToFill
         let asset = selectAlbum.object(at: indexPath.item)
         let option = PHImageRequestOptions()
-        imageManager.requestImage(for: asset, targetSize: CGSize(width: cell.frame.width * 3, height: cell.frame.height * 3), contentMode: .aspectFill, options: option, resultHandler: { image, _ in cell.imageView.image = image })
+        option.deliveryMode = .fastFormat
+        
+        cell.selectImage = asset
+        
+        imageManager.requestImage(for: asset, targetSize: CGSize(width: cell.frame.width, height: cell.frame.height), contentMode: .aspectFill, options: option, resultHandler: { image, _ in
+            cell.imageView.image = image
+        })
         
         return cell
     }
@@ -65,18 +80,28 @@ class SecondViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (Int(UIScreen.main.bounds.size.width) - (numbeOfItemsInRow - 1) * 6 - 40) / numbeOfItemsInRow
-        print(width)
+        self.widths = width
         return CGSize(width: width, height: width)
     }
 
-    /*
-    // MARK: - Navigation
-
+    
+    // MARK: - Segue
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        guard let nextViewcontroller: ThirdViewController = segue.destination as? ThirdViewController else {
+            return
+        }
+        
+        guard let cell: SecondCollectionViewCell = sender as? SecondCollectionViewCell else {
+            return
+        }
+        nextViewcontroller.imageAsset = cell.selectImage
+        nextViewcontroller.DateTitle = dateFormatter.string(from: cell.selectImage.creationDate ?? Date())
+        nextViewcontroller.timeTitle = timeFormatter.string(from: cell.selectImage.creationDate ?? Date())
+  
     }
-    */
+    
 
 }
