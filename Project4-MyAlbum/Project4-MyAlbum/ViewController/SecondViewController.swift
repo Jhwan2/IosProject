@@ -11,12 +11,13 @@ import Photos
 class SecondViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     //MARK: Outlet & Vars & Lets
     @IBOutlet var collectionView: UICollectionView!
+    
     var selectAlbum: PHFetchResult<PHAsset>!
     let Identifier: String = "SecondCell"
     private var myAlbum: PHFetchResult<PHAsset>!
     let imageManager: PHCachingImageManager = PHCachingImageManager()
     private let numbeOfItemsInRow = 3
-    var widths = 0
+    
     let dateFormatter: DateFormatter = {
         let formatter: DateFormatter = DateFormatter()
         formatter.dateFormat = "yyyy - MM - dd"
@@ -49,7 +50,6 @@ class SecondViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: SecondCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifier, for: indexPath) as! SecondCollectionViewCell
         
-        //cell.imageView  = UIImageView(frame: CGRect(x: 10, y: 10, width: 120, height: 120))
         cell.imageView.contentMode = .scaleToFill
         let asset = selectAlbum.object(at: indexPath.item)
         let option = PHImageRequestOptions()
@@ -80,7 +80,6 @@ class SecondViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (Int(UIScreen.main.bounds.size.width) - (numbeOfItemsInRow - 1) * 6 - 40) / numbeOfItemsInRow
-        self.widths = width
         return CGSize(width: width, height: width)
     }
 
