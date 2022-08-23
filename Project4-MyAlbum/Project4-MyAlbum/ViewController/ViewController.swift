@@ -30,14 +30,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     //MARK: Photo load Method
     func requestCollection(){
         
-        let fetchOptions = PHFetchOptions() //에셋 또는 컬렉션 객체를 가져올 때 Photos에서 반환하는 결과에 필터링, 정렬 등 영향을 주는 옵션입니다.
-        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "startDate", ascending: false)]
-        
-        customAlbum.removeAll()
-        let result = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: fetchOptions)
-        let result2 = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: fetchOptions)
 
         
+        customAlbum.removeAll()
+        let result = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: nil)
+        let result2 = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil)
+
         result.enumerateObjects({ (collection, _, _) in
             if (collection.hasAssets()) {
                 self.customAlbum.append(collection)
@@ -99,8 +97,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         let cell: FirstCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! FirstCollectionViewCell
         
-        fetchResult = PHAsset.fetchAssets(in: customAlbum[indexPath.item], options: nil)
+        let fetchOptions = PHFetchOptions() //에셋 또는 컬렉션 객체를 가져올 때 Photos에서 반환하는 결과에 필터링, 정렬 등 영향을 주는 옵션입니다.
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        let fetchOptions2 = PHFetchOptions() //에셋 또는 컬렉션 객체를 가져올 때 Photos에서 반환하는 결과에 필터링, 정렬 등 영향을 주는 옵션입니다.
+        fetchOptions2.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        
+        fetchResult = PHAsset.fetchAssets(in: customAlbum[indexPath.item], options: fetchOptions2)
+        cell.album2 = fetchResult
+        
+        fetchResult = PHAsset.fetchAssets(in: customAlbum[indexPath.item], options: fetchOptions)
         cell.album = fetchResult
+        
 
         let asset = fetchResult.lastObject
         let option = PHImageRequestOptions()
@@ -133,6 +140,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
         nextViewcontroller.title = cell.nameLabel.text
         nextViewcontroller.selectAlbum = cell.album
+        nextViewcontroller.myAlbum = cell.album2
     }
     
     //MARK: collectionViewFlowLayout

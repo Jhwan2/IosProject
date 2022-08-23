@@ -14,5 +14,6 @@ class FirstCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var numLabel: UILabel!
     @IBOutlet weak var ImageView: UIImageView!
     var album: PHFetchResult<PHAsset>!
+    var album2: PHFetchResult<PHAsset>!
     
 }
