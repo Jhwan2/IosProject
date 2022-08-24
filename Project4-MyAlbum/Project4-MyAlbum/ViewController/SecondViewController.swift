@@ -137,7 +137,7 @@ class SecondViewController: UIViewController, UICollectionViewDataSource, UIColl
         guard let nextViewcontroller: ThirdViewController = segue.destination as? ThirdViewController else {
             return
         }
-        
+         
         guard let cell: SecondCollectionViewCell = sender as? SecondCollectionViewCell else {
             return
         }
