@@ -16,7 +16,13 @@ extension PHAssetCollection {
     }
 }
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, PHPhotoLibraryChangeObserver {
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        OperationQueue.main.addOperation {
+            self.collectionView.reloadData()
+        }
+    }
+    
     //MARK: Vars & Lets
     @IBOutlet private var collectionView: UICollectionView!
     var customAlbum: [PHAssetCollection] = []
@@ -85,6 +91,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         @unknown default:
             print("de end ??")
         }
+        PHPhotoLibrary.shared().register(self)
 
     }
     
@@ -111,6 +118,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
         let asset = fetchResult.lastObject
         let option = PHImageRequestOptions()
+        if asset == nil{
+            
+            self.requestCollection()
+        }
 
         imageManager.requestImage(for: asset!, targetSize: CGSize(width: cell.ImageView.frame.width, height: cell.ImageView.frame.height), contentMode: .aspectFill, options: option, resultHandler: { image, _ in cell.ImageView.image = image
             cell.ImageView.layer.cornerRadius = cell.ImageView.frame.width/20

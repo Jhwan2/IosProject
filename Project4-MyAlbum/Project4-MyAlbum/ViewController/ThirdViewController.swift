@@ -40,7 +40,9 @@ extension UINavigationItem {
 
 class ThirdViewController: UIViewController,UIGestureRecognizerDelegate {
     
+    @IBOutlet weak var favoriteBtn: UIBarButtonItem!
     @IBOutlet var imageView: UIImageView!
+    
     var imageAsset: PHAsset!
     let imageManager: PHCachingImageManager = PHCachingImageManager()
     var DateTitle: String!
@@ -67,6 +69,13 @@ class ThirdViewController: UIViewController,UIGestureRecognizerDelegate {
             tapGR.delegate = self
             tapGR.numberOfTapsRequired = 2
             view.addGestureRecognizer(tapGR)
+        
+        if self.imageAsset.isFavorite {
+            self.favoriteBtn.title = "❤️"
+        }
+        else{
+            self.favoriteBtn.title = "🖤"
+        }
     }
     
     
@@ -84,9 +93,30 @@ class ThirdViewController: UIViewController,UIGestureRecognizerDelegate {
     
     @IBAction func ImageShare(_ sender: UIBarButtonItem) {
         
-        let activityViewController = UIActivityViewController(activityItems: [self.imageView.image as Any], applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [self.imageView.image!], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         self.present(activityViewController, animated: true, completion: nil)
+
+    }
+    
+    @IBAction func TrashTouchInside(_ sender: UIBarButtonItem) {
+        PHPhotoLibrary.shared().performChanges({PHAssetChangeRequest.deleteAssets([self.imageAsset!] as NSArray)}, completionHandler: nil)
+                
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func isFavorite(_ sender: UIBarButtonItem) {
+        if sender.title == "❤️"{
+            sender.title = "🖤"
+            PHPhotoLibrary.shared().performChanges({let changeFavorite = PHAssetChangeRequest.init(for: self.imageAsset)
+                changeFavorite.isFavorite = false })
+        }
+        else if sender.title == "🖤"{
+            sender.title = "❤️"
+            PHPhotoLibrary.shared().performChanges({let changeFavorite = PHAssetChangeRequest.init(for: self.imageAsset)
+                changeFavorite.isFavorite = true })
+        }
+            
 
     }
     

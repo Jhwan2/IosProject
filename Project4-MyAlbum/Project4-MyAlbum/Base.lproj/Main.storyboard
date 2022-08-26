@@ -151,7 +151,6 @@
                                         <size key="customSize" width="120" height="120"/>
                                         <connections>
                                             <outlet property="imageView" destination="6d2-cK-rno" id="pMZ-X1-FMH"/>
-                                            <segue destination="JVF-rc-YJp" kind="show" identifier="selectImage" id="aWZ-bz-V1z"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -173,7 +172,7 @@
                     <toolbarItems>
                         <barButtonItem enabled="NO" systemItem="action" id="cV7-14-7fw">
                             <connections>
-                                <action selector="ImageShare:" destination="ajS-jQ-kLU" id="ogL-Lq-wIq"/>
+                                <action selector="actionBtn:" destination="rVZ-Xp-bkI" id="6c3-Fh-JE0"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="o8p-2U-Msu"/>
@@ -182,7 +181,11 @@
                                 <action selector="sortButton:" destination="rVZ-Xp-bkI" id="bYQ-8e-GRg"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem enabled="NO" systemItem="trash" id="5yK-Jn-3fs"/>
+                        <barButtonItem enabled="NO" systemItem="trash" id="5yK-Jn-3fs">
+                            <connections>
+                                <action selector="trashBtn:" destination="rVZ-Xp-bkI" id="hMD-8s-JUu"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="Nva-8M-01Q">
                         <barButtonItem key="rightBarButtonItem" title="선택" id="yQh-Jd-KK3">
@@ -193,11 +196,13 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="actionButton" destination="cV7-14-7fw" id="fsm-ze-DJ0"/>
                         <outlet property="collectionView" destination="Juf-1t-9fe" id="UiV-fI-Y4V"/>
+                        <outlet property="trashButton" destination="5yK-Jn-3fs" id="Ef3-2w-VKX"/>
+                        <segue destination="JVF-rc-YJp" kind="show" identifier="selectImage" id="9Tn-eU-EIY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJd-Rh-KCc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="ajS-jQ-kLU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1714" y="98"/>
         </scene>
@@ -230,12 +235,21 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="kSB-o4-BK8"/>
-                        <barButtonItem title="🖤" width="329.5" style="done" id="VOC-dl-35d"/>
-                        <barButtonItem systemItem="trash" id="eI0-p4-u0e"/>
+                        <barButtonItem width="329.5" style="done" id="VOC-dl-35d">
+                            <connections>
+                                <action selector="isFavorite:" destination="JVF-rc-YJp" id="JGW-OM-LFJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="trash" id="eI0-p4-u0e">
+                            <connections>
+                                <action selector="TrashTouchInside:" destination="JVF-rc-YJp" id="0FJ-uT-wMZ"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="Pym-Kl-rew"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="favoriteBtn" destination="VOC-dl-35d" id="TWY-xw-lQh"/>
                         <outlet property="imageView" destination="KjA-x7-y2M" id="FmU-fm-wGQ"/>
                     </connections>
                 </viewController>
