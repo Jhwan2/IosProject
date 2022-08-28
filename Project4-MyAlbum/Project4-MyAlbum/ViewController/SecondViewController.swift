@@ -159,11 +159,15 @@ class SecondViewController: UIViewController, UICollectionViewDataSource, UIColl
         let activityViewController = UIActivityViewController(activityItems: shareImages, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         self.present(activityViewController, animated: true, completion: nil)
+        //self.selectArray.removeAll()
+        //self.cancelbtAction(sender)
     }
     
     @IBAction func trashBtn(_ sender: UIBarButtonItem){
         
         PHPhotoLibrary.shared().performChanges({PHAssetChangeRequest.deleteAssets(self.selectArray as NSFastEnumeration)}, completionHandler: nil)
+        //self.selectArray.removeAll()
+        //self.cancelbtAction(sender)
         
     }
     
