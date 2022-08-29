@@ -17,6 +17,7 @@ extension PHAssetCollection {
 }
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, PHPhotoLibraryChangeObserver {
+    //MARK: photo reload
     func photoLibraryDidChange(_ changeInstance: PHChange) {
         OperationQueue.main.addOperation {
             self.collectionView.reloadData()
