@@ -36,6 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource {
                     }
                 }
             }
+            
         }
         
         return cell
