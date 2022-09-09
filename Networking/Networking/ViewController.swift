@@ -60,7 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             guard let data = data else {
                 return
             }
-            
+            print(data)
             do {
                 let apiResponse: APIResponse = try JSONDecoder().decode(APIResponse.self, from: data)
                 self.friends = apiResponse.results
