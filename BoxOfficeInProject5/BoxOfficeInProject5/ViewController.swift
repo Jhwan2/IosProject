@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             
             do {
                 let apiDictionary = try JSONSerialization.jsonObject(with: data, options: [])
-                print(apiDictionary)
+                print(apisssDictionary)
                 //let apiResponse: Movies = try JSONDecoder().decode(Movies.self, from: data)
                 //let result = try JSONDecoder().decode(movie.self, from: data)
                 //self.moVies = apiResponse
